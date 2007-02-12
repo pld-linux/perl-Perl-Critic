@@ -6,7 +6,7 @@
 %define	pdir	Perl
 %define	pnam	Critic
 Summary:	Perl::Critic - Critique Perl source code for best-practices
-Summary(pl):	Perl::Critic - krytyka kodu ¼ród³owego w Perla pod k±tem najlepszych praktyk
+Summary(pl.UTF-8):   Perl::Critic - krytyka kodu ÅºrÃ³dÅ‚owego w Perla pod kÄ…tem najlepszych praktyk
 Name:		perl-Perl-Critic
 Version:	0.22
 Release:	1
@@ -47,17 +47,17 @@ You can enable, disable, and customize those Polices through the
 Perl::Critic interface. You can also create new Policy modules that
 suit your own tastes.
 
-%description -l pl
+%description -l pl.UTF-8
 Perl::Critic to rozszerzalny szkielet do tworzenia i nanoszenia
-standardów kodowania dla kodu ¼ród³owego w Perlu. Zasadniczo jest to
-statyczny silnik do analizy kodu ¼ród³owego. Perl::Critic jest
-rozpowszechniany z wieloma modu³ami Perl::Critic::Policy, próbuj±cymi
-wymusiæ ró¿ne wskazania dotycz±ce kodowania. Wiêkszo¶æ modu³ów Policy
-jest oparta na ksi±¿ce "Perl Best Practices" Damiana Conwaya. Jednak
-Perl::Critic nie jest ograniczony do PDB i bêdzie obs³ugiwa³ polityki
-nawet niezgodne z Conwayem. Poprzez interfejs Perl::Critic mo¿na
-w³±czaæ, wy³±czaæ i dostrajaæ polityki. Mo¿na tak¿e tworzyæ nowe
-modu³y Policy odpowiadaj±ce w³asnym gustom.
+standardÃ³w kodowania dla kodu ÅºrÃ³dÅ‚owego w Perlu. Zasadniczo jest to
+statyczny silnik do analizy kodu ÅºrÃ³dÅ‚owego. Perl::Critic jest
+rozpowszechniany z wieloma moduÅ‚ami Perl::Critic::Policy, prÃ³bujÄ…cymi
+wymusiÄ‡ rÃ³Å¼ne wskazania dotyczÄ…ce kodowania. WiÄ™kszoÅ›Ä‡ moduÅ‚Ã³w Policy
+jest oparta na ksiÄ…Å¼ce "Perl Best Practices" Damiana Conwaya. Jednak
+Perl::Critic nie jest ograniczony do PDB i bÄ™dzie obsÅ‚ugiwaÅ‚ polityki
+nawet niezgodne z Conwayem. Poprzez interfejs Perl::Critic moÅ¼na
+wÅ‚Ä…czaÄ‡, wyÅ‚Ä…czaÄ‡ i dostrajaÄ‡ polityki. MoÅ¼na takÅ¼e tworzyÄ‡ nowe
+moduÅ‚y Policy odpowiadajÄ…ce wÅ‚asnym gustom.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
