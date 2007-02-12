@@ -6,7 +6,7 @@
 %define	pdir	Perl
 %define	pnam	Critic
 Summary:	Perl::Critic - Critique Perl source code for best-practices
-Summary(pl.UTF-8):   Perl::Critic - krytyka kodu źródłowego w Perla pod kątem najlepszych praktyk
+Summary(pl.UTF-8):	Perl::Critic - krytyka kodu źródłowego w Perla pod kątem najlepszych praktyk
 Name:		perl-Perl-Critic
 Version:	0.22
 Release:	1
