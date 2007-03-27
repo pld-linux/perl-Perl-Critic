@@ -8,17 +8,18 @@
 Summary:	Perl::Critic - Critique Perl source code for best-practices
 Summary(pl.UTF-8):	Perl::Critic - krytyka kodu źródłowego w Perla pod kątem najlepszych praktyk
 Name:		perl-Perl-Critic
-Version:	0.22
+Version:	1.05
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Perl/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	8c4a32c603916a82c106804659bb7518
+# Source0-md5:	9f0cddca8c4279f94687e2b6822aefba
 URL:		http://search.cpan.org/dist/Perl-Critic/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
+BuildRequires:	perl-B-Keywords
 BuildRequires:	perl-Config-Tiny >= 2
 BuildRequires:	perl-IO-String
 BuildRequires:	perl-List-MoreUtils
@@ -35,6 +36,7 @@ Requires:	perl-String-Format >= 1.13
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define		_noautoreq	'perl(Perl::Critic.*)'
 %description
 Perl::Critic is an extensible framework for creating and applying
 coding standards to Perl source code. Essentially, it is a static
