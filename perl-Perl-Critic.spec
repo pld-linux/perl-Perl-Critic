@@ -22,10 +22,12 @@ BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
 BuildRequires:	perl-B-Keywords
 BuildRequires:	perl-Config-Tiny >= 2
+BuildRequires:	perl-Exception-Class
 BuildRequires:	perl-IO-String
 BuildRequires:	perl-List-MoreUtils
 BuildRequires:	perl-Module-Pluggable >= 3.1
 BuildRequires:	perl-PPI >= 1.118
+BuildRequires:	perl-Readonly
 BuildRequires:	perl-Set-Scalar >= 1.20
 BuildRequires:	perl-String-Format >= 1.13
 %endif
