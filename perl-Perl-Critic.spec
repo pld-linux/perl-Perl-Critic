@@ -9,7 +9,7 @@ Summary:	Perl::Critic - Critique Perl source code for best-practices
 Summary(pl.UTF-8):	Perl::Critic - krytyka kodu źródłowego w Perla pod kątem najlepszych praktyk
 Name:		perl-Perl-Critic
 Version:	1.080
-Release:	1
+Release:	2
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
@@ -89,6 +89,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc Changes extras
 %attr(755,root,root) %{_bindir}/perlcritic
+%dir %{perl_vendorlib}/Perl
 %{perl_vendorlib}/Perl/Critic.pm
 %{perl_vendorlib}/Perl/Critic
 %{_mandir}/man1/perlcritic.1*
