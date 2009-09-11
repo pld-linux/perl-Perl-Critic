@@ -8,25 +8,24 @@
 Summary:	Perl::Critic - Critique Perl source code for best-practices
 Summary(pl.UTF-8):	Perl::Critic - krytyka kodu źródłowego w Perla pod kątem najlepszych praktyk
 Name:		perl-Perl-Critic
-Version:	1.080
-Release:	2
-# same as perl
+Version:	1.105
+Release:	1
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Perl/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	a094cce997e96954b7fc7c21f1e91cc2
+# Source0-md5:	25915a2e00784a7e3b94d6ffaaf20b22
 URL:		http://search.cpan.org/dist/Perl-Critic/
 BuildRequires:	perl-Module-Build
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
-BuildRequires:	perl-B-Keywords
+BuildRequires:	perl-B-Keywords >= 1.05
 BuildRequires:	perl-Config-Tiny >= 2
-BuildRequires:	perl-Exception-Class
+BuildRequires:	perl-Exception-Class >= 1.23
 BuildRequires:	perl-IO-String
-BuildRequires:	perl-List-MoreUtils
+BuildRequires:	perl-List-MoreUtils >= 0.19
 BuildRequires:	perl-Module-Pluggable >= 3.1
-BuildRequires:	perl-PPI >= 1.118
+BuildRequires:	perl-PPI >= 1.205
 BuildRequires:	perl-Readonly
 BuildRequires:	perl-Set-Scalar >= 1.20
 BuildRequires:	perl-String-Format >= 1.13
