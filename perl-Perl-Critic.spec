@@ -8,12 +8,12 @@
 Summary:	Perl::Critic - Critique Perl source code for best-practices
 Summary(pl.UTF-8):	Perl::Critic - krytyka kodu źródłowego w Perla pod kątem najlepszych praktyk
 Name:		perl-Perl-Critic
-Version:	1.105
+Version:	1.113
 Release:	1
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/Perl/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	25915a2e00784a7e3b94d6ffaaf20b22
+Source0:	http://www.cpan.org/modules/by-module/Perl/ELLIOTJS/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	20d2e7c73b68d21c08eff6ae4addd58d
 URL:		http://search.cpan.org/dist/Perl-Critic/
 BuildRequires:	perl-Module-Build
 BuildRequires:	perl-devel >= 1:5.8.0
@@ -21,24 +21,39 @@ BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
 BuildRequires:	perl-B-Keywords >= 1.05
 BuildRequires:	perl-Config-Tiny >= 2
+BuildRequires:	perl-Email-Address >= 1.889
 BuildRequires:	perl-Exception-Class >= 1.23
 BuildRequires:	perl-IO-String
 BuildRequires:	perl-List-MoreUtils >= 0.19
 BuildRequires:	perl-Module-Pluggable >= 3.1
-BuildRequires:	perl-PPI >= 1.205
-BuildRequires:	perl-Readonly
-BuildRequires:	perl-Set-Scalar >= 1.20
+BuildRequires:	perl-PPI >= 1.208
+BuildRequires:	perl-PPIx-Regexp >= 0.010
+BuildRequires:	perl-PPIx-Utilities >= 1.001
+BuildRequires:	perl-Pod-Spell >= 1
+BuildRequires:	perl-Readonly >= 1.03
 BuildRequires:	perl-String-Format >= 1.13
+BuildRequires:	perl-Task-Weaken
+BuildRequires:	perl-Test-Simple >= 0.92
+BuildRequires:	perl-version >= 0.77
 %endif
+Requires:	perl-B-Keywords >= 1.05
 Requires:	perl-Config-Tiny >= 2
+Requires:	perl-Email-Address >= 1.889
+Requires:	perl-Exception-Class >= 1.23
+Requires:	perl-List-MoreUtils >= 0.19
 Requires:	perl-Module-Pluggable >= 3.1
-Requires:	perl-PPI >= 1.118
-Requires:	perl-Set-Scalar >= 1.20
+Requires:	perl-PPI >= 1.208
+Requires:	perl-PPIx-Regexp >= 0.010
+Requires:	perl-PPIx-Utilities >= 1.001
+Requires:	perl-Readonly >= 1.03
 Requires:	perl-String-Format >= 1.13
+Requires:	perl-dirs >= 4-4
+Requires:	perl-version >= 0.77
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_noautoreq	'perl(Perl::Critic.*)'
+
 %description
 Perl::Critic is an extensible framework for creating and applying
 coding standards to Perl source code. Essentially, it is a static
@@ -79,7 +94,7 @@ rm -rf $RPM_BUILD_ROOT
 
 ./Build install
 
-rm -f $RPM_BUILD_ROOT%{perl_vendorlib}/Perl/Critic/*.pod
+%{__rm} $RPM_BUILD_ROOT%{perl_vendorlib}/Perl/Critic/*.pod
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -91,5 +106,8 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_vendorlib}/Perl
 %{perl_vendorlib}/Perl/Critic.pm
 %{perl_vendorlib}/Perl/Critic
+%dir %{perl_vendorlib}/Test/Perl/Critic
+%{perl_vendorlib}/Test/Perl/Critic/Policy.pm
 %{_mandir}/man1/perlcritic.1*
-%{_mandir}/man3/Perl::Critic*
+%{_mandir}/man3/Perl::Critic*.3pm*
+%{_mandir}/man3/Test::Perl::Critic::Policy.3pm*
