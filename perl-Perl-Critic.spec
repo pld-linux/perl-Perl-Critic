@@ -8,12 +8,12 @@
 Summary:	Perl::Critic - Critique Perl source code for best-practices
 Summary(pl.UTF-8):	Perl::Critic - krytyka kodu źródłowego w Perla pod kątem najlepszych praktyk
 Name:		perl-Perl-Critic
-Version:	1.113
+Version:	1.117
 Release:	1
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/Perl/ELLIOTJS/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	20d2e7c73b68d21c08eff6ae4addd58d
+Source0:	http://search.cpan.org/CPAN/authors/id/T/TH/THALJEF/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	85a274c3d08e1c3a5ed9034d5579c0a5
 URL:		http://search.cpan.org/dist/Perl-Critic/
 BuildRequires:	perl-Module-Build
 BuildRequires:	perl-devel >= 1:5.8.0
@@ -26,13 +26,15 @@ BuildRequires:	perl-Exception-Class >= 1.23
 BuildRequires:	perl-IO-String
 BuildRequires:	perl-List-MoreUtils >= 0.19
 BuildRequires:	perl-Module-Pluggable >= 3.1
-BuildRequires:	perl-PPI >= 1.208
+BuildRequires:	perl-PPI >= 1.215
 BuildRequires:	perl-PPIx-Regexp >= 0.010
 BuildRequires:	perl-PPIx-Utilities >= 1.001
+BuildRequires:	perl-PadWalker
 BuildRequires:	perl-Pod-Spell >= 1
 BuildRequires:	perl-Readonly >= 1.03
 BuildRequires:	perl-String-Format >= 1.13
 BuildRequires:	perl-Task-Weaken
+BuildRequires:	perl-Test-Memory-Cycle
 BuildRequires:	perl-Test-Simple >= 0.92
 BuildRequires:	perl-version >= 0.77
 %endif
@@ -42,7 +44,7 @@ Requires:	perl-Email-Address >= 1.889
 Requires:	perl-Exception-Class >= 1.23
 Requires:	perl-List-MoreUtils >= 0.19
 Requires:	perl-Module-Pluggable >= 3.1
-Requires:	perl-PPI >= 1.208
+Requires:	perl-PPI >= 1.215
 Requires:	perl-PPIx-Regexp >= 0.010
 Requires:	perl-PPIx-Utilities >= 1.001
 Requires:	perl-Readonly >= 1.03
