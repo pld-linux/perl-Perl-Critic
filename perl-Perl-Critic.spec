@@ -9,7 +9,7 @@ Summary:	Perl::Critic - Critique Perl source code for best-practices
 Summary(pl.UTF-8):	Perl::Critic - krytyka kodu źródłowego w Perla pod kątem najlepszych praktyk
 Name:		perl-Perl-Critic
 Version:	1.117
-Release:	1
+Release:	2
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://search.cpan.org/CPAN/authors/id/T/TH/THALJEF/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -34,9 +34,11 @@ BuildRequires:	perl-Pod-Spell >= 1
 BuildRequires:	perl-Readonly >= 1.03
 BuildRequires:	perl-String-Format >= 1.13
 BuildRequires:	perl-Task-Weaken
+BuildRequires:	perl-Test-Deep
 BuildRequires:	perl-Test-Memory-Cycle
 BuildRequires:	perl-Test-Simple >= 0.92
 BuildRequires:	perl-version >= 0.77
+BuildRequires:	perltidy
 %endif
 Requires:	perl-B-Keywords >= 1.05
 Requires:	perl-Config-Tiny >= 2
