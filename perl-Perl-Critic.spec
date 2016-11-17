@@ -8,17 +8,19 @@
 Summary:	Perl::Critic - Critique Perl source code for best-practices
 Summary(pl.UTF-8):	Perl::Critic - krytyka kodu źródłowego w Perla pod kątem najlepszych praktyk
 Name:		perl-Perl-Critic
-Version:	1.117
-Release:	3
+Version:	1.126
+Release:	1
+# same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://search.cpan.org/CPAN/authors/id/T/TH/THALJEF/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	85a274c3d08e1c3a5ed9034d5579c0a5
+Source0:	http://www.cpan.org/modules/by-module/Perl/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	c5c698baa7fd373ea893ff39f29ed7b9
 URL:		http://search.cpan.org/dist/Perl-Critic/
-BuildRequires:	perl-Module-Build
+BuildRequires:	perl-Module-Build >= 0.4200
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
+BuildRequires:	perl(Exporter) >= 5.63
 BuildRequires:	perl-B-Keywords >= 1.05
 BuildRequires:	perl-Config-Tiny >= 2
 BuildRequires:	perl-Email-Address >= 1.889
@@ -26,12 +28,12 @@ BuildRequires:	perl-Exception-Class >= 1.23
 BuildRequires:	perl-IO-String
 BuildRequires:	perl-List-MoreUtils >= 0.19
 BuildRequires:	perl-Module-Pluggable >= 3.1
-BuildRequires:	perl-PPI >= 1.215
-BuildRequires:	perl-PPIx-Regexp >= 0.010
+BuildRequires:	perl-PPI >= 1.220
+BuildRequires:	perl-PPIx-Regexp >= 0.027
 BuildRequires:	perl-PPIx-Utilities >= 1.001
 BuildRequires:	perl-PadWalker
 BuildRequires:	perl-Pod-Spell >= 1
-BuildRequires:	perl-Readonly >= 1.03
+BuildRequires:	perl-Readonly >= 2.00
 BuildRequires:	perl-String-Format >= 1.13
 BuildRequires:	perl-Task-Weaken
 BuildRequires:	perl-Test-Deep
@@ -40,19 +42,21 @@ BuildRequires:	perl-Test-Simple >= 0.92
 BuildRequires:	perl-version >= 0.77
 BuildRequires:	perltidy
 %endif
+Requires:	perl(Exporter) >= 5.63
 Requires:	perl-B-Keywords >= 1.05
 Requires:	perl-Config-Tiny >= 2
 Requires:	perl-Email-Address >= 1.889
 Requires:	perl-Exception-Class >= 1.23
 Requires:	perl-List-MoreUtils >= 0.19
 Requires:	perl-Module-Pluggable >= 3.1
-Requires:	perl-PPI >= 1.215
-Requires:	perl-PPIx-Regexp >= 0.010
+Requires:	perl-PPI >= 1.220
+Requires:	perl-PPIx-Regexp >= 0.027
 Requires:	perl-PPIx-Utilities >= 1.001
-Requires:	perl-Readonly >= 1.03
+Requires:	perl-Readonly >= 2.00
 Requires:	perl-String-Format >= 1.13
 Requires:	perl-dirs >= 4-4
 Requires:	perl-version >= 0.77
+Suggests:	perl-Term-ANSIColor >= 2.02
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -105,9 +109,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc Changes extras
+%doc Changes README.md TODO.pod extras
 %attr(755,root,root) %{_bindir}/perlcritic
-%dir %{perl_vendorlib}/Perl
 %{perl_vendorlib}/Perl/Critic.pm
 %{perl_vendorlib}/Perl/Critic
 %dir %{perl_vendorlib}/Test/Perl/Critic
