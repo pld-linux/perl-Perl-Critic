@@ -8,13 +8,13 @@
 Summary:	Perl::Critic - Critique Perl source code for best-practices
 Summary(pl.UTF-8):	Perl::Critic - krytyka kodu źródłowego w Perla pod kątem najlepszych praktyk
 Name:		perl-Perl-Critic
-Version:	1.126
+Version:	1.132
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Perl/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	c5c698baa7fd373ea893ff39f29ed7b9
+# Source0-md5:	76042c0516190419e0424f10366231ae
 URL:		http://search.cpan.org/dist/Perl-Critic/
 BuildRequires:	perl-B-Keywords >= 1.05
 BuildRequires:	perl-List-MoreUtils >= 0.19
