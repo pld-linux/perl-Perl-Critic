@@ -9,7 +9,7 @@ Summary:	Perl::Critic - Critique Perl source code for best-practices
 Summary(pl.UTF-8):	Perl::Critic - krytyka kodu źródłowego w Perla pod kątem najlepszych praktyk
 Name:		perl-Perl-Critic
 Version:	1.132
-Release:	1
+Release:	2
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
@@ -28,9 +28,10 @@ BuildRequires:	perl-Email-Address >= 1.889
 BuildRequires:	perl-Exception-Class >= 1.23
 BuildRequires:	perl-IO-String
 BuildRequires:	perl-Module-Pluggable >= 3.1
-BuildRequires:	perl-PPI >= 1.220
+BuildRequires:	perl-PPI >= 1.224
 BuildRequires:	perl-PPIx-Regexp >= 0.027
 BuildRequires:	perl-PPIx-Utilities >= 1.001
+BuildRequires:	perl-PPIx-QuoteLike
 BuildRequires:	perl-PadWalker
 BuildRequires:	perl-Pod-Spell >= 1
 BuildRequires:	perl-Readonly >= 2.00
