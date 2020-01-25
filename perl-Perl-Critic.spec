@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_without	tests		# do not perform "make test"
 #
-%include	/usr/lib/rpm/macros.perl
 %define	pdir	Perl
 %define	pnam	Critic
 Summary:	Perl::Critic - Critique Perl source code for best-practices
