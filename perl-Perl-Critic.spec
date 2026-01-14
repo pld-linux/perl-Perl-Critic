@@ -8,7 +8,7 @@ Summary:	Perl::Critic - Critique Perl source code for best-practices
 Summary(pl.UTF-8):	Perl::Critic - krytyka kodu źródłowego w Perla pod kątem najlepszych praktyk
 Name:		perl-Perl-Critic
 Version:	1.132
-Release:	2
+Release:	3
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
