@@ -7,13 +7,13 @@
 Summary:	Perl::Critic - Critique Perl source code for best-practices
 Summary(pl.UTF-8):	Perl::Critic - krytyka kodu źródłowego w Perla pod kątem najlepszych praktyk
 Name:		perl-Perl-Critic
-Version:	1.132
-Release:	3
+Version:	1.156
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Perl/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	76042c0516190419e0424f10366231ae
+# Source0-md5:	069de7695699bb9a6b2a7390d4db716d
 URL:		http://search.cpan.org/dist/Perl-Critic/
 BuildRequires:	perl-B-Keywords >= 1.05
 BuildRequires:	perl-List-MoreUtils >= 0.19
@@ -27,9 +27,10 @@ BuildRequires:	perl-Email-Address >= 1.889
 BuildRequires:	perl-Exception-Class >= 1.23
 BuildRequires:	perl-IO-String
 BuildRequires:	perl-Module-Pluggable >= 3.1
-BuildRequires:	perl-PPI >= 1.224
-BuildRequires:	perl-PPIx-Regexp >= 0.027
+BuildRequires:	perl-PPI >= 1.277
+BuildRequires:	perl-PPIx-Regexp >= 0.068
 BuildRequires:	perl-PPIx-Utilities >= 1.001
+BuildRequires:	perl-PPIx-Utils
 BuildRequires:	perl-PPIx-QuoteLike
 BuildRequires:	perl-PadWalker
 BuildRequires:	perl-Pod-Spell >= 1
@@ -49,9 +50,10 @@ Requires:	perl-Email-Address >= 1.889
 Requires:	perl-Exception-Class >= 1.23
 Requires:	perl-List-MoreUtils >= 0.19
 Requires:	perl-Module-Pluggable >= 3.1
-Requires:	perl-PPI >= 1.220
-Requires:	perl-PPIx-Regexp >= 0.027
+Requires:	perl-PPI >= 1.277
+Requires:	perl-PPIx-Regexp >= 0.068
 Requires:	perl-PPIx-Utilities >= 1.001
+Requires:	perl-PPIx-Utils
 Requires:	perl-Readonly >= 2.00
 Requires:	perl-String-Format >= 1.13
 Requires:	perl-dirs >= 4-4
