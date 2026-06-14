@@ -1,6 +1,6 @@
 #
 # Conditional build:
-%bcond_without	tests		# do not perform "make test"
+%bcond_without	tests		# unit tests
 #
 %define	pdir	Perl
 %define	pnam	Critic
@@ -12,57 +12,60 @@ Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/Perl/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	https://www.cpan.org/modules/by-module/Perl/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	069de7695699bb9a6b2a7390d4db716d
-URL:		http://search.cpan.org/dist/Perl-Critic/
-BuildRequires:	perl-B-Keywords >= 1.05
-BuildRequires:	perl-List-MoreUtils >= 0.19
-BuildRequires:	perl-Module-Build >= 0.4200
-BuildRequires:	perl-devel >= 1:5.8.0
-BuildRequires:	rpm-perlprov >= 4.1-13
-%if %{with tests}
+URL:		https://metacpan.org/dist/Perl-Critic
 BuildRequires:	perl(Exporter) >= 5.63
+BuildRequires:	perl-B-Keywords >= 1.23
+BuildRequires:	perl-List-SomeUtils >= 0.55
+BuildRequires:	perl-Module-Build >= 0.4204
+BuildRequires:	perl-devel >= 1:5.10.1
+BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	rpmbuild(macros) >= 1.745
+%if %{with tests}
 BuildRequires:	perl-Config-Tiny >= 2
-BuildRequires:	perl-Email-Address >= 1.889
 BuildRequires:	perl-Exception-Class >= 1.23
+BuildRequires:	perl-File-Which
+BuildRequires:	perl-Getopt-Long
 BuildRequires:	perl-IO-String
 BuildRequires:	perl-Module-Pluggable >= 3.1
 BuildRequires:	perl-PPI >= 1.277
-BuildRequires:	perl-PPIx-Regexp >= 0.068
-BuildRequires:	perl-PPIx-Utilities >= 1.001
-BuildRequires:	perl-PPIx-Utils
 BuildRequires:	perl-PPIx-QuoteLike
+BuildRequires:	perl-PPIx-Regexp >= 0.068
+BuildRequires:	perl-PPIx-Utils >= 0.003
 BuildRequires:	perl-PadWalker
+BuildRequires:	perl-Pod-Parser
 BuildRequires:	perl-Pod-Spell >= 1
 BuildRequires:	perl-Readonly >= 2.00
-BuildRequires:	perl-String-Format >= 1.13
+BuildRequires:	perl-Scalar-List-Utils
+BuildRequires:	perl-String-Format >= 1.18
 BuildRequires:	perl-Task-Weaken
+BuildRequires:	perl-Term-ANSIColor >= 2.02
 BuildRequires:	perl-Test-Deep
 BuildRequires:	perl-Test-Memory-Cycle
 BuildRequires:	perl-Test-Simple >= 0.92
+BuildRequires:	perl-Text-ParseWords >= 3
 BuildRequires:	perl-version >= 0.77
 BuildRequires:	perltidy
 %endif
 Requires:	perl(Exporter) >= 5.63
-Requires:	perl-B-Keywords >= 1.05
+Requires:	perl-B-Keywords >= 1.23
 Requires:	perl-Config-Tiny >= 2
-Requires:	perl-Email-Address >= 1.889
 Requires:	perl-Exception-Class >= 1.23
-Requires:	perl-List-MoreUtils >= 0.19
+Requires:	perl-List-SomeUtils >= 0.55
 Requires:	perl-Module-Pluggable >= 3.1
 Requires:	perl-PPI >= 1.277
 Requires:	perl-PPIx-Regexp >= 0.068
-Requires:	perl-PPIx-Utilities >= 1.001
-Requires:	perl-PPIx-Utils
+Requires:	perl-PPIx-Utils >= 0.003
 Requires:	perl-Readonly >= 2.00
-Requires:	perl-String-Format >= 1.13
+Requires:	perl-String-Format >= 1.18
 Requires:	perl-dirs >= 4-4
 Requires:	perl-version >= 0.77
 Suggests:	perl-Term-ANSIColor >= 2.02
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_noautoreq	'perl(Perl::Critic.*)'
+%define		_noautoreq_perl	Perl::Critic.*
 
 %description
 Perl::Critic is an extensible framework for creating and applying
@@ -95,9 +98,12 @@ moduły Policy odpowiadające własnym gustom.
 %{__perl} Build.PL \
 	destdir=$RPM_BUILD_ROOT \
 	installdirs=vendor
+
 ./Build
 
-%{?with_tests:./Build test}
+%if %{with tests}
+./Build test
+%endif
 
 %install
 rm -rf $RPM_BUILD_ROOT
